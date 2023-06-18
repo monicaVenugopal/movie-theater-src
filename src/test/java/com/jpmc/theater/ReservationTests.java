@@ -5,18 +5,21 @@ import org.junit.jupiter.api.Test;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ReservationTests {
 
     @Test
     void totalFee() {
-        var customer = new Customer("John Doe", "unused-id");
-        var showing = new Showing(
-                new Movie("Spider-Man: No Way Home", Duration.ofMinutes(90), 12.5, 1),
+        Customer customer = new Customer("Jane Doe");
+        Movie movie = new Movie("Spider-Man: No Way Home", Duration.ofMinutes(90), 12.5, 1);
+        Showing showing = new Showing(movie,
                 1,
                 LocalDateTime.now()
         );
-        assertTrue(new Reservation(customer, showing, 3).totalFee() == 37.5);
+        Reservation reservation = new Reservation(customer, showing, 3);
+        assertEquals("Jane Doe", reservation.getCustomer().getName());
+        assertEquals("Spider-Man: No Way Home", reservation.getShowing().getMovie().getTitle());
+        assertEquals(28.5, reservation.totalFee());
     }
 }

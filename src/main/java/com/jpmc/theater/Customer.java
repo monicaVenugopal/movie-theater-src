@@ -1,23 +1,30 @@
 package com.jpmc.theater;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public class Customer {
 
     private String name;
-
     private String id;
 
+    public String getName() {
+        return name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
     /**
+     * Constructor
+     *
      * @param name customer name
-     * @param id customer id
      */
-    public Customer(String name, String id) {
-        this.id = id; // NOTE - id is not used anywhere at the moment
-
+    public Customer(String name) {
+        this.id = UUID.randomUUID().toString(); // NOTE - id is not used anywhere at the moment
         this.name = name;
-
-        }
+    }
 
     @Override
     public boolean equals(Object o) {
