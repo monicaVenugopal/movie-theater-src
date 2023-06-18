@@ -8,6 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MovieTests {
 
+    /**
+     * Test for movie class
+     */
     @Test
     void movieTest() {
         //Create new movie and check if all details.

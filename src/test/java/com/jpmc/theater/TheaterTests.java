@@ -5,14 +5,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TheaterTests {
-    @Test
-    void totalFeeForCustomer() {
-        Theater theater = new Theater(LocalDateProvider.singleton());
-        Customer john = new Customer("John Doe");
-        Reservation reservation = theater.reserve(john, 2, 4);
-        assertEquals(reservation.totalFee(), 37.5);
-    }
 
+    /**
+     * Test for schedule
+     */
     @Test
     void testSchedule() {
         Theater theater = new Theater(LocalDateProvider.singleton());
@@ -21,6 +17,9 @@ public class TheaterTests {
         assertEquals(0, theater.getSchedule().get(0).getMovie().getSpecialCode());
     }
 
+    /**
+     * Test for reserve method
+     */
     @Test
     void testReservation() {
         Theater theater = new Theater(LocalDateProvider.singleton());
@@ -31,12 +30,18 @@ public class TheaterTests {
         assertEquals(18.75, reservation.totalFee());
     }
 
+    /**
+     * Test to print movie schedule in simple test format
+     */
     @Test
     void printMovieSchedule() {
         Theater theater = new Theater(LocalDateProvider.singleton());
         theater.printSchedule();
     }
 
+    /**
+     * Test to print movie schedule in json format
+     */
     @Test
     void printMovieScheduleJson() {
         Theater theater = new Theater(LocalDateProvider.singleton());

@@ -11,6 +11,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ShowingTests {
 
+    /**
+     * Test different discounts for showing class
+     */
     @Test
     void testMovieDiscount() {
         Movie spiderMan = new Movie("Spider-Man: No Way Home", Duration.ofMinutes(90), 12.5, 1);

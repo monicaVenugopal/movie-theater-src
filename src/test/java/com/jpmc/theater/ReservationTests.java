@@ -9,6 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ReservationTests {
 
+    /**
+     * Test for total fee for a customer
+     */
     @Test
     void totalFee() {
         Customer customer = new Customer("Jane Doe");
